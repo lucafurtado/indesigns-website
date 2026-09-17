@@ -104,6 +104,10 @@ Apenas Indicações + Instagram. Não sugerir anúncios pagos neste momento.
 
 ---
 
+## Skills Locais
+
+- `.claude/skills/adicionar-depoimento/` — adiciona depoimento de cliente no site (JSON central em `06_website/build/assets/data/depoimentos.json`, aparece automaticamente na home, em `/feedbacks/` e na página do projeto vinculado).
+
 ## Convenções do Repositório
 
 - `_deliveries/` — pasta com underscore = histórico de artefatos entregues, não operacional ativa

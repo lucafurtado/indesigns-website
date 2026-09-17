@@ -92,6 +92,13 @@ O formulário fica no final — quem chega até lá já está comprometido.
 - v2 (em `06_website/build/`): versão atual com dados reais (61 99858-6151, indesigns@gmail.com) e copy refinada
 *A v2 é a versão a ser publicada.*
 
+**Set/2026 | Sistema de depoimentos centralizado em JSON**
+Depoimentos passaram a ser data-driven: uma entrada em `06_website/build/assets/data/depoimentos.json` aparece automaticamente na home (se `featured`), na aba `/feedbacks/` e na página do projeto vinculado (`projectSlug`) — sem editar HTML a cada depoimento novo. A frase-resumo (`highlight`) é sempre curadoria manual, nunca corte automático de texto.
+*Razão: pedido da cliente pra publicar feedbacks sem retrabalho manual em cada projeto. Skill `.claude/skills/adicionar-depoimento/` cobre o fluxo.*
+
+**Set/2026 | Categoria "Eventos" no grid de projetos (placeholder)**
+5ª categoria adicionada ao bento da home, grid reorganizado em 3+2. Ainda não existe projeto real de eventos — usa a foto de Espaços Coletivos como placeholder até a cliente enviar projeto e foto próprios.
+
 ---
 
 ## Operação
@@ -103,3 +110,35 @@ Escassez comunicada com naturalidade como argumento de valor.
 **Mai/2026 | Ação mais estratégica do momento**
 Obter depoimento da síndica da 116 Sul.
 *Razão: desbloqueia site, primeiros posts, prova social e negociação de ticket.*
+
+---
+
+## Conteúdo — Estratégia de Junho
+
+**Mai/2026 | Consultora de conteúdo parceira**
+@SABRINAQRZ foi contratada para estruturar a comunicação do @indesigns. Ela entregou análise de marca e calendário de conteúdo para junho/2026. A Cria AI produz os assets (posts feed, roteiros stories/reels); a Indira executa o que precisar de ela em câmera.
+
+**Mai/2026 | Pilares editoriais redefinidos — 3 pilares (@SABRINAQRZ)**
+Os 5 pilares originais (análise Cria AI) foram substituídos pelos 3 da consultora como estrutura operacional de junho em diante:
+1. **Storytelling de Projetos** — processo criativo, antes/depois, bastidores, expectativa vs. realidade
+2. **Construção de Autoridade Pessoal / Lifestyle** — referências, rotina, POV de obra, opiniões — ponto focal: Stories
+3. **Humanização da Arquitetura / Educativo Descomplicado** — arquitetura para a vida real, erros comuns, dicas práticas
+*Razão: alinhamento com a consultora responsável pela implementação do conteúdo.*
+
+**Mai/2026 | Calendário de junho 2026 definido**
+9 posts de feed programados + mínimo 2 stories/dia:
+- Seg 1/6: Storytelling (Estudo Preliminar/Anteprojeto)
+- Qua 3/6: Humanização/Educativo
+- Seg 9/6: Storytelling (Visitas ao Projeto)
+- Qui 11/6: Autoridade/Lifestyle
+- Seg 15/6: Storytelling (Resultado Final)
+- Qui 18/6: Autoridade/Lifestyle
+- Ter 23/6: Humanização/Educativo
+- Sex 26/6: Autoridade/Lifestyle
+- Seg 29/6: Storytelling (Estudo Preliminar/Anteprojeto)
+
+**Mai/2026 | Abordagem de produção de conteúdo**
+- Feed: posts prontos em HTML+PNG (carrosséis, posts texto, imagem IA)
+- Stories: roteiros prontos para a Indira executar com celular
+- Reels: roteiros prontos; Indira grava quando puder
+- Entrega: PDF cronograma de junho com mockups, legendas e datas

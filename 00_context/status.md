@@ -10,11 +10,15 @@
 
 - [ ] Ligar para a síndica da 116 Sul — pedir depoimento formal (roteiro em `05_client_experience/retention.md`)
 - [ ] Publicar Story no perfil pessoal da Indira direcionando para @indesigns
-- [ ] Configurar e-mail profissional: contato@indesigns.arq.br
+- [ ] Configurar e-mail profissional: contato@indesigns.com.br
 
 ## Próximas 2 Semanas
 
-- [ ] Registrar domínio indesigns.arq.br e publicar site (`06_website/build/`)
+- [x] Registrar domínio e publicar site — no ar em `indesigns.com.br` (Vercel, deploy automático via GitHub)
+- [ ] Configurar Google Search Console (propriedade de domínio) + submeter sitemap.xml
+- [ ] Instalar Google Analytics 4 (passar Measurement ID para inserir no `<head>`)
+- [ ] Criar Perfil da Empresa no Google (Google Business Profile) — Indesigns, Brasília
+- [ ] Atualizar link da bio do Instagram para https://indesigns.com.br
 - [ ] Agendar ensaio fotográfico (portrait editorial + detalhes dos projetos)
 - [ ] Publicar primeiros 3 posts no novo formato visual
 - [ ] Reescrever bio do @indesigns com posicionamento atual
@@ -27,6 +31,13 @@
 - [ ] Estruturar os 4 Highlights do @indesigns (Projetos / Processo / Sobre / Depoimentos)
 - [ ] Reservar bloco semanal fixo de 2h para produção de conteúdo (batching)
 - [ ] Instalar Meta Business Suite para agendamento de posts
+
+## Produção de Conteúdo — Junho 2026 (Em Andamento)
+
+- [ ] Criar posts de feed prontos (HTML+PNG) para os 9 dias do calendário @SABRINAQRZ
+- [ ] Criar roteiros de Stories para cada semana (mín. 2/dia, storytelling pessoal)
+- [ ] Criar roteiros de Reels para os posts que pedem Indira em câmera
+- [ ] Montar PDF de entrega: cronograma de junho + mockups + legendas com data
 
 ---
 
@@ -90,16 +101,21 @@
 - [x] Site criado (v2 em `06_website/build/`) com copy e design finalizados
 - [x] Estratégia de landing page documentada
 - [x] Sitemap e wireframes documentados
-- [ ] Registrar domínio indesigns.arq.br
-- [ ] Publicar site
-- [ ] Instalar Google Analytics após publicação
+- [x] Registrar domínio indesigns.com.br
+- [x] Publicar site (Vercel — deploy automático via push no GitHub)
+- [x] Higiene técnica de SEO: canonicals no domínio certo, sitemap real, uma URL por página, schema
+- [x] Sistema de depoimentos data-driven (JSON central) — aba `/feedbacks/`, seção na home e dentro de cada página de projeto, atualiza sozinho ao editar o JSON (Set/2026)
+- [x] Categoria "Eventos" adicionada ao grid de projetos (placeholder — falta projeto real e foto própria)
+- [ ] Google Search Console + submeter sitemap
+- [ ] Instalar Google Analytics 4 após ter o Measurement ID
+- [ ] Criar Perfil da Empresa no Google
 
 ### Operações
 - [x] Processos críticos mapeados (5 processos documentados)
 - [x] Stack de ferramentas definida
 - [x] Templates de mensagens criados (vendas + pós-projeto)
 - [ ] Configurar WhatsApp Business (foto, descrição, respostas rápidas)
-- [ ] Criar e-mail profissional (contato@indesigns.arq.br)
+- [ ] Criar e-mail profissional (contato@indesigns.com.br)
 - [ ] Escolher ferramenta de CRM (Notion, Trello ou HubSpot free)
 - [ ] Estruturar pasta-padrão de projeto no Google Drive
 - [ ] Criar formulário de pré-briefing (Typeform ou Tally)
@@ -151,7 +167,7 @@
 
 ### Marcos da Fase 1 (status atual)
 - [x] Site criado
-- [ ] Site publicado (indesigns.arq.br)
+- [x] Site publicado (indesigns.com.br)
 - [ ] Primeiros 15 posts publicados no @indesigns
 - [ ] Depoimentos coletados (síndica 116 Sul + 2 residenciais)
 - [ ] Migração de seguidores: perfil pessoal → @indesigns iniciada
