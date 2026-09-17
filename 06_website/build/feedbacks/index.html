@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZBY25QCNX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6ZBY25QCNX");
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedbacks de clientes | Indesigns</title>
+  <meta name="description" content="O que dizem os clientes da Indesigns sobre os projetos de arquitetura e interiores conduzidos em Brasília.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#173a4a">
+  <link rel="canonical" href="https://indesigns.com.br/feedbacks">
+  <meta property="og:title" content="Feedbacks de clientes | Indesigns">
+  <meta property="og:description" content="O que dizem os clientes da Indesigns sobre os projetos de arquitetura e interiores conduzidos em Brasília.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://indesigns.com.br/feedbacks">
+  <meta property="og:image" content="https://indesigns.com.br/assets/hero-bg.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://indesigns.com.br/" },
+          { "@type": "ListItem", "position": 2, "name": "Feedbacks", "item": "https://indesigns.com.br/feedbacks" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    /* ── Feedbacks — estilos específicos da página ── */
+    .feedbacks-page-header .projetos-header__text a {
+      color: var(--teal);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+    .feedbacks-section {
+      padding: clamp(56px, 7vw, 88px) 0 clamp(80px, 10vw, 120px);
+    }
+    .feedbacks-section .depoimentos__grid {
+      margin-bottom: 0;
+    }
+    @media (max-width: 900px) {
+      .feedbacks-section .depoimentos__grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    }
+    @media (max-width: 600px) {
+      .feedbacks-section .depoimentos__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="servicos-page">
+  <nav class="nav project-nav" id="nav" role="navigation" aria-label="Navegação principal">
+    <div class="nav__container">
+      <a href="/" class="nav__logo" aria-label="Indesigns início">
+        <img src="/assets/logo-full.png" alt="Indesigns" class="nav__logo-img" width="auto" height="30">
+      </a>
+      <div class="nav__links" id="navLinks" role="menubar">
+        <a href="/#projetos" class="nav__link" role="menuitem">Projetos</a>
+        <a href="/feedbacks/" class="nav__link" role="menuitem">Feedbacks</a>
+        <a href="/#servicos" class="nav__link" role="menuitem">Serviços</a>
+        <a href="/#processo" class="nav__link" role="menuitem">Processo</a>
+        <a href="/#sobre" class="nav__link" role="menuitem">Sobre</a>
+        <a href="/collab/" class="nav__link" role="menuitem">Collab</a>
+        <a href="/links/" class="nav__link" role="menuitem">Links</a>
+        <a href="/#contato" class="nav__link nav__link--cta" role="menuitem">Contato</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav__backdrop" id="navBackdrop"></div>
+  </nav>
+
+  <main>
+    <header class="projetos-header feedbacks-page-header" aria-labelledby="feedbacks-title">
+      <div class="container">
+        <span class="label projetos-header__kicker">CLIENTES</span>
+        <div class="projetos-header__content">
+          <h1 id="feedbacks-title" class="projetos-header__title">O que dizem os clientes.</h1>
+          <p class="projetos-header__text">Depoimentos reais de quem contratou a Indesigns. Cada projeto tem o seu, sempre na voz de quem viveu o resultado.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="depoimentos feedbacks-section" aria-label="Todos os feedbacks">
+      <div class="container">
+        <div class="depoimentos__grid" id="feedbacksGrid" aria-live="polite">
+          <!-- preenchido via depoimentos.js a partir de assets/data/depoimentos.json -->
+        </div>
+      </div>
+    </section>
+
+    <section class="servicos-cta" aria-label="Entre em contato">
+      <div class="container">
+        <p class="servicos-cta__title">Quer ser o próximo feedback aqui?</p>
+        <p class="servicos-cta__sub">Uma conversa já é um começo.</p>
+        <a href="/#contato" class="btn btn--primary">Agende uma conversa</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo-lockup">
+            <img src="/assets/logo-full.png" alt="Indesigns Arquitetura e Design" class="footer__logo-img" width="auto" height="44">
+          </div>
+          <span class="footer__tagline">Brasília, DF</span>
+        </div>
+        <nav class="footer__links" aria-label="Links de contato">
+          <a href="https://www.instagram.com/indesigns/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://wa.me/5561998586151" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:indesigns.arq@gmail.com?subject=Contato%20via%20site%20-%20Indesigns">E-mail</a>
+        </nav>
+      </div>
+      <div class="footer__divider" aria-hidden="true"></div>
+      <div class="footer__bottom">
+        <span>© 2026 Indesigns. Todos os direitos reservados.</span>
+        <span>Indira Bonfim · Arquiteta · Brasília, DF</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js" defer></script>
+  <script src="/depoimentos.js" defer></script>
+</body>
+</html>
