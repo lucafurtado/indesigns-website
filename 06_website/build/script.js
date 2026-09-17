@@ -173,6 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
     revealObserver.observe(el);
   });
 
+  // Hook pra conteúdo injetado depois deste DOMContentLoaded (ex: depoimentos.js
+  // via fetch assíncrono) poder entrar no mesmo observer de reveal.
+  window.__observeReveal = (el) => revealObserver.observe(el);
+
   const showcaseSection = document.querySelector('.showcase');
   if (showcaseSection) {
     new IntersectionObserver(

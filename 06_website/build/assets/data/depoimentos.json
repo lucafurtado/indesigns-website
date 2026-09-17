@@ -1,0 +1,24 @@
+{
+  "depoimentos": [
+    {
+      "id": "residencia-noroeste-01",
+      "projectSlug": "residencia-noroeste",
+      "projectName": "Cobertura Duplex Noroeste",
+      "clientName": "Cliente",
+      "clientRole": "",
+      "highlight": "A mudança para um espaço menor virou mais convivência, não menos.",
+      "text": "A mudança para um espaço menor parecia um desafio. O projeto transformou a rotina da casa e aproximou ainda mais a convivência da família.",
+      "featured": true
+    },
+    {
+      "id": "clinica-orbis-01",
+      "projectSlug": "clinica-orbis",
+      "projectName": "Orbis Psicologia",
+      "clientName": "Cliente",
+      "clientRole": "",
+      "highlight": "A sala precisava transmitir calma antes mesmo da conversa começar.",
+      "text": "A sala de atendimento precisava transmitir calma antes mesmo da conversa começar. Ficou exatamente assim.",
+      "featured": true
+    }
+  ]
+}
