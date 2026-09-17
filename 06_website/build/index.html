@@ -139,6 +139,7 @@
 
       <nav class="nav__links nav__links--left" id="navLinks" role="menubar">
         <a href="#projetos" class="nav__link" role="menuitem">Projetos</a>
+        <a href="#depoimentos" class="nav__link" role="menuitem">Feedbacks</a>
         <a href="#servicos" class="nav__link" role="menuitem">Serviços</a>
         <a href="#processo" class="nav__link" role="menuitem">Processo</a>
       </nav>
@@ -206,7 +207,7 @@
       </div>
       <a href="/projetos/" class="sc-all-link">Ver todos os projetos →</a>
     </div>
-    <div class="showcase-bento" aria-label="Categorias de projetos">
+    <div class="showcase-bento showcase-bento--projetos" aria-label="Categorias de projetos">
 
       <a href="/projetos/#residencial" class="sc-cell"
         aria-label="Ver projetos residenciais">
@@ -245,6 +246,31 @@
         </div>
       </a>
 
+      <a href="/projetos/#eventos" class="sc-cell"
+        aria-label="Ver projetos de eventos">
+        <img src="/assets/projects/porto-seguro/capa-coletivos.png"
+          alt="Eventos" loading="lazy" decoding="async">
+        <div class="sc-cell__overlay">
+          <p class="sc-cell__catname">Eventos</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="depoimentos" id="depoimentos" aria-label="Depoimentos de clientes">
+    <div class="container">
+      <header class="section-header">
+        <span class="label">CLIENTES</span>
+        <h2 class="section-title">Na voz de quem contratou.</h2>
+      </header>
+
+      <div class="depoimentos__grid" id="depoimentosGrid" aria-live="polite">
+        <!-- preenchido via depoimentos.js a partir de assets/data/depoimentos.json -->
+      </div>
+
+      <p class="depoimentos__note"><a href="/feedbacks/" class="sc-all-link">Ver todos os feedbacks →</a></p>
     </div>
   </section>
 
@@ -416,42 +442,6 @@
     </div>
   </section>
 
-  <!-- DEPOIMENTOS — oculto na V1, ativar quando tiver depoimentos reais -->
-  <!--
-  <section class="depoimentos" id="depoimentos" aria-label="Depoimentos de clientes">
-    <div class="container">
-      <header class="section-header">
-        <span class="label">CLIENTES</span>
-        <h2 class="section-title">Na voz de quem contratou.</h2>
-      </header>
-
-      <div class="depoimentos__grid">
-        <blockquote class="depoimento reveal">
-          <p class="depoimento__text">"[Depoimento — a coletar]"</p>
-          <footer class="depoimento__author">
-            <cite class="depoimento__name">Nome, Síndica</cite>
-            <span class="depoimento__project">Cobertura Coletiva · Porto Seguro</span>
-          </footer>
-        </blockquote>
-        <blockquote class="depoimento reveal">
-          <p class="depoimento__text">"[Depoimento — a coletar]"</p>
-          <footer class="depoimento__author">
-            <cite class="depoimento__name">Nome</cite>
-            <span class="depoimento__project">Projeto Residencial · Sudoeste</span>
-          </footer>
-        </blockquote>
-        <blockquote class="depoimento reveal">
-          <p class="depoimento__text">"[Depoimento — a coletar]"</p>
-          <footer class="depoimento__author">
-            <cite class="depoimento__name">Nome</cite>
-            <span class="depoimento__project">Projeto Residencial · Lago Sul</span>
-          </footer>
-        </blockquote>
-      </div>
-    </div>
-  </section>
-  -->
-
   <div class="axo-marginalia-wrap" aria-hidden="true">
     <img src="/assets/axo-02.png" class="axo-marginalia" alt="">
   </div>
@@ -553,5 +543,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="/depoimentos.js" defer></script>
 </body>
 </html>
