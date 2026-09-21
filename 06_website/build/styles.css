@@ -5228,6 +5228,47 @@ iframe {
   transform: scale(1.03);
 }
 
+/* Carregamento: o card já ocupa o tamanho final (aspect-ratio) com um placeholder discreto;
+   a foto só aparece, com fade, quando está inteira (evita pintura parcial de cima pra baixo). */
+.projetos-grid__item {
+  background: linear-gradient(105deg, rgba(23, 58, 74, 0.05) 35%, rgba(23, 58, 74, 0.10) 50%, rgba(23, 58, 74, 0.05) 65%) 0 0 / 250% 100%;
+  animation: projetos-shimmer 1.8s linear infinite;
+}
+
+.projetos-grid__item:has(.is-loaded) {
+  animation: none;
+  background: rgba(23, 58, 74, 0.05);
+}
+
+@keyframes projetos-shimmer {
+  from { background-position: 100% 0; }
+  to   { background-position: -100% 0; }
+}
+
+.projetos-grid__img,
+.projetos-carousel__img {
+  opacity: 0;
+}
+
+.projetos-grid__img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+}
+
+.projetos-carousel__img {
+  transition: opacity 0.6s ease;
+}
+
+.projetos-grid__img.is-loaded,
+.projetos-carousel__img.is-loaded {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projetos-grid__item { animation: none; }
+  .projetos-grid__img,
+  .projetos-carousel__img { transition: none; }
+}
+
 .projetos-grid__overlay {
   position: absolute;
   inset: 0;

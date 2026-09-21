@@ -764,8 +764,15 @@ document.addEventListener('DOMContentLoaded', () => {
     dotsContainer.appendChild(dot);
   });
 
+  // Slides fora da tela usam loading="lazy": libera o próximo antes da transição pra ele já estar pronto
+  function warm(index) {
+    const img = slides[(index + slides.length) % slides.length].querySelector('img');
+    if (img && img.loading === 'lazy') img.loading = 'eager';
+  }
+
   function goTo(index) {
     current = (index + slides.length) % slides.length;
+    warm(current + 1);
     track.style.transform = 'translateX(-' + (current * 100) + '%)';
     dotsContainer.querySelectorAll('.projetos-carousel__dot').forEach((d, i) => {
       d.classList.toggle('is-active', i === current);
@@ -786,6 +793,7 @@ document.addEventListener('DOMContentLoaded', () => {
   track.addEventListener('mouseenter', stopAutoPlay);
   track.addEventListener('mouseleave', startAutoPlay);
 
+  warm(1);
   startAutoPlay();
 
   /* Teclado */
