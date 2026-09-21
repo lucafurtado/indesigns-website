@@ -4258,6 +4258,109 @@ iframe {
   }
 }
 
+/* Vários vídeos no mesmo projeto: grupo de bolinhas usando o mesmo .project-reel */
+.project-reels {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 18px clamp(12px, 1.6vw, 24px);
+  margin-top: 10px;
+}
+
+.project-intro:has(.project-reels) .project-reels {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: end;
+  justify-content: flex-end;
+  margin-right: clamp(18px, 3vw, 46px);
+}
+
+.project-intro:has(.project-reels) .project-reels .project-reel {
+  margin: 0;
+}
+
+.project-reels .project-reel__ring {
+  width: clamp(76px, 8.5vw, 92px);
+  height: clamp(76px, 8.5vw, 92px);
+}
+
+.project-reel:focus-visible {
+  outline: none;
+}
+
+.project-reel:focus-visible .project-reel__ring {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(60, 110, 113, 0.35);
+}
+
+@media (max-width: 960px) {
+  .project-intro:has(.project-reels) .project-reels {
+    grid-row: auto;
+    justify-self: start;
+    justify-content: flex-start;
+    margin-right: 0;
+  }
+
+  .project-reels .project-reel__ring {
+    width: 92px;
+    height: 92px;
+  }
+
+  .project-intro:has(.project-reels .project-reel) .project-copy {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+/* Vídeo vertical no modal: a coluna da mídia acompanha a proporção 9:16 */
+.video-modal.is-portrait .video-modal__stage {
+  grid-template-columns: auto minmax(240px, 320px);
+  justify-content: center;
+}
+
+.video-modal.is-portrait .video-modal__player {
+  width: auto;
+  height: min(80vh, 780px);
+  aspect-ratio: 9 / 16;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .video-modal.is-portrait .video-modal__stage {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .video-modal.is-portrait .video-modal__player {
+    height: clamp(240px, calc(100vh - 360px), 540px);
+  }
+
+  .video-modal.is-portrait .video-modal__panel {
+    width: 100%;
+    text-align: center;
+  }
+
+  .video-modal.is-portrait .video-modal__panel p {
+    display: none;
+  }
+
+  .video-modal.is-portrait .video-modal__title {
+    margin-top: 8px;
+    font-size: 26px;
+  }
+
+  .video-modal.is-portrait .video-modal__actions {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 14px;
+  }
+
+  .video-modal.is-portrait .video-modal__action {
+    min-height: 38px;
+    justify-content: center;
+  }
+}
+
 /* ============================================================
    DEPOIMENTOS � Editorial nas p�ginas de projeto
    ============================================================ */

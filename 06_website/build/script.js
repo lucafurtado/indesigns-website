@@ -519,58 +519,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* -- VIDEO REEL � P�ginas de projeto ---------------------- */
 
-  const projectReel = document.querySelector('.project-reel');
-  if (projectReel) {
-    const videoSrc    = projectReel.dataset.video;
-    if (!videoSrc) {
-      projectReel.style.display = 'none';
-    } else {
-    const projectName = projectReel.dataset.title || document.getElementById('project-title')?.textContent?.trim() || 'Projeto Indesigns';
-    const videoPoster = projectReel.dataset.poster || '';
+  const allReels = Array.from(document.querySelectorAll('.project-reel'));
+  allReels.filter((reel) => !reel.dataset.video).forEach((reel) => { reel.style.display = 'none'; });
+  const reels = allReels.filter((reel) => reel.dataset.video);
+
+  if (reels.length) {
     const modal       = document.getElementById('projectVideoModal');
     const modalVid    = modal?.querySelector('.video-modal__player');
     const modalClose  = modal?.querySelector('.video-modal__close');
+    const modalKicker = modal?.querySelector('.video-modal__panel .label');
     const modalTitle  = modal?.querySelector('.video-modal__title');
     const modalMute   = modal?.querySelector('.video-modal__mute');
     const modalShare  = modal?.querySelector('[data-video-share]');
     const relatedWrap = modal?.querySelector('.video-modal__related');
-    const relatedVideos = parseRelatedVideos(projectReel.dataset.relatedVideos);
+    const pageTitle   = document.getElementById('project-title')?.textContent?.trim();
 
-    // Inline ? Floating: after user scrolls past testimonial, reel moves to corner
-    const testimonialEl = document.querySelector('.project-testimonial');
-    if (testimonialEl) {
-      new IntersectionObserver(
-        ([entry]) => {
-          const pastIt = !entry.isIntersecting && entry.boundingClientRect.top < 0;
-          if (pastIt && !projectReel.classList.contains('is-floating')) {
-            projectReel.classList.add('is-floating');
-            requestAnimationFrame(() => {
-              setTimeout(() => projectReel.classList.add('is-visible'), 80);
-            });
-          } else if (!pastIt && projectReel.classList.contains('is-floating')) {
-            projectReel.classList.remove('is-floating', 'is-visible');
-          }
-        },
-        { threshold: 0.5 }
-      ).observe(testimonialEl);
-    }
+    const videoOf = (reel) => ({
+      src:      reel.dataset.video,
+      poster:   reel.dataset.poster || '',
+      title:    reel.dataset.title || pageTitle || 'Projeto Indesigns',
+      label:    reel.querySelector('.project-reel__label')?.textContent?.trim() || '',
+      portrait: reel.dataset.orientation === 'portrait',
+    });
 
-    const openModal = () => {
-      if (!modal) return;
-      modal.removeAttribute('hidden');
-      document.body.style.overflow = 'hidden';
-      if (modalTitle) modalTitle.textContent = projectName;
-      renderRelatedVideos(relatedWrap, relatedVideos);
-      requestAnimationFrame(() => modal.classList.add('is-open'));
-      if (modalVid && videoSrc) {
-        if (videoPoster) modalVid.setAttribute('poster', videoPoster);
-        modalVid.src = videoSrc;
-        modalVid.load();
+    // Bolinhas dentro de um .project-reels formam um grupo: o modal alterna entre elas.
+    let group = [];
+    let current = null;
+    let related = [];
+
+    const showVideo = (video, resetMute) => {
+      current = video;
+      modal.classList.toggle('is-portrait', video.portrait);
+      if (modalTitle) modalTitle.textContent = video.title;
+      if (modalKicker && group.length > 1 && video.label) modalKicker.textContent = `Vídeo · ${video.label}`;
+      if (!modalVid) return;
+      if (video.poster) modalVid.setAttribute('poster', video.poster);
+      else modalVid.removeAttribute('poster');
+      modalVid.src = video.src;
+      modalVid.load();
+      if (resetMute) {
         modalVid.muted = true;
         modalVid.setAttribute('muted', '');
         if (modalMute) modalMute.textContent = 'Ativar som';
-        modalVid.play().catch(() => {});
       }
+      modalVid.play().catch(() => {});
+    };
+
+    const openModal = (reel) => {
+      if (!modal) return;
+      const groupEl = reel.closest('.project-reels');
+      group = groupEl
+        ? Array.from(groupEl.querySelectorAll('.project-reel[data-video]')).map(videoOf)
+        : [];
+      const video = videoOf(reel);
+      const explicitRelated = parseRelatedVideos(reel.dataset.relatedVideos);
+      modal.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+      showVideo(video, true);
+      related = explicitRelated.length ? explicitRelated : group.filter((v) => v.src !== video.src);
+      renderRelatedVideos(relatedWrap, related);
+      requestAnimationFrame(() => modal.classList.add('is-open'));
     };
 
     const closeModal = () => {
@@ -587,6 +595,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 520);
     };
 
+    // Inline -> flutuante: só quando existe uma única bolinha (várias ficariam empilhadas no canto)
+    const testimonialEl = document.querySelector('.project-testimonial');
+    if (testimonialEl && reels.length === 1) {
+      const projectReel = reels[0];
+      new IntersectionObserver(
+        ([entry]) => {
+          const pastIt = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+          if (pastIt && !projectReel.classList.contains('is-floating')) {
+            projectReel.classList.add('is-floating');
+            requestAnimationFrame(() => {
+              setTimeout(() => projectReel.classList.add('is-visible'), 80);
+            });
+          } else if (!pastIt && projectReel.classList.contains('is-floating')) {
+            projectReel.classList.remove('is-floating', 'is-visible');
+          }
+        },
+        { threshold: 0.5 }
+      ).observe(testimonialEl);
+    }
+
     modalMute?.addEventListener('click', () => {
       if (!modalVid) return;
       modalVid.muted = !modalVid.muted;
@@ -594,9 +622,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     modalShare?.addEventListener('click', async () => {
+      const name = current?.title || pageTitle || 'Projeto Indesigns';
       const shareData = {
-        title: projectName,
-        text: `${projectName} | Indesigns`,
+        title: name,
+        text: `${name} | Indesigns`,
         url: window.location.href,
       };
       try {
@@ -613,21 +642,30 @@ document.addEventListener('DOMContentLoaded', () => {
     relatedWrap?.addEventListener('click', (e) => {
       const item = e.target.closest('[data-related-index]');
       if (!item || !modalVid) return;
-      const nextVideo = relatedVideos[parseInt(item.dataset.relatedIndex, 10)];
-      if (!nextVideo?.src) return;
-      modalVid.src = nextVideo.src;
-      modalVid.load();
-      modalVid.play().catch(() => {});
+      const next = related[parseInt(item.dataset.relatedIndex, 10)];
+      if (!next?.src) return;
+      showVideo({ ...current, ...next }, false);
+      if (group.length > 1) {
+        related = group.filter((v) => v.src !== current.src);
+        renderRelatedVideos(relatedWrap, related);
+      }
     });
 
-    projectReel.addEventListener('click', openModal);
+    reels.forEach((reel) => {
+      reel.addEventListener('click', () => openModal(reel));
+      reel.addEventListener('keydown', (e) => {
+        if ((e.key === 'Enter' || e.key === ' ') && reel.getAttribute('role') === 'button') {
+          e.preventDefault();
+          openModal(reel);
+        }
+      });
+    });
     modalClose?.addEventListener('click', closeModal);
     modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && modal && !modal.hasAttribute('hidden')) closeModal();
     });
-  } // close else (has video)
-  } // close if (projectReel)
+  } // close if (reels.length)
 
   /* -- GSAP: REFINOS SUTIS --------------------------------- */
 
