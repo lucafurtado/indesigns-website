@@ -105,7 +105,10 @@
 - [x] Publicar site (Vercel — deploy automático via push no GitHub)
 - [x] Higiene técnica de SEO: canonicals no domínio certo, sitemap real, uma URL por página, schema
 - [x] Sistema de depoimentos data-driven (JSON central) — aba `/feedbacks/`, seção na home e dentro de cada página de projeto, atualiza sozinho ao editar o JSON (Set/2026)
-- [x] Categoria "Eventos" adicionada ao grid de projetos (placeholder — falta projeto real e foto própria)
+- [x] Categoria "Eventos" adicionada ao grid de projetos, com foto de capa própria (falta cadastrar o primeiro projeto de eventos)
+- [x] "Como era antes" no ar em Noroeste, Jaburu, Projeto Verter e Apto CI; vídeos em bolinhas no Projeto Verter; galeria do Orbis com 10 fotos (Set/2026)
+- [x] /projetos/ com miniaturas otimizadas, placeholder e filtro por hash imediato (Set/2026)
+- [ ] "Como era antes" dos demais projetos (fotos chegando aos poucos)
 - [ ] Google Search Console + submeter sitemap
 - [ ] Instalar Google Analytics 4 após ter o Measurement ID
 - [ ] Criar Perfil da Empresa no Google

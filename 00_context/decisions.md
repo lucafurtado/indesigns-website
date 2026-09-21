@@ -96,8 +96,14 @@ O formulário fica no final — quem chega até lá já está comprometido.
 Depoimentos passaram a ser data-driven: uma entrada em `06_website/build/assets/data/depoimentos.json` aparece automaticamente na home (se `featured`), na aba `/feedbacks/` e na página do projeto vinculado (`projectSlug`) — sem editar HTML a cada depoimento novo. A frase-resumo (`highlight`) é sempre curadoria manual, nunca corte automático de texto.
 *Razão: pedido da cliente pra publicar feedbacks sem retrabalho manual em cada projeto. Skill `.claude/skills/adicionar-depoimento/` cobre o fluxo.*
 
+**Set/2026 | Narrativa dos cases: como era → transformação → resultado → cliente**
+Nos cases novos (Projeto Verter, Apto CI) o carrossel "Como era antes" vem antes da galeria de renders, seguido do depoimento. Vídeos do projeto entram como grupo de bolinhas (`.project-reels`) reutilizando o componente de vídeo existente. Nomes de exibição mudam sem mudar a URL (Consultório ML → Projeto Verter, Cobertura Duplex Noroeste → Cobertura Monis).
+
+**Set/2026 | Miniaturas otimizadas em /projetos/**
+Cards e carrossel de /projetos/ usam derivados WebP (`assets/projects/_thumbs/`), não os originais de até 12 MB. Ao incluir projeto novo, gerar as miniaturas antes.
+
 **Set/2026 | Categoria "Eventos" no grid de projetos (placeholder)**
-5ª categoria adicionada ao bento da home, grid reorganizado em 3+2. Ainda não existe projeto real de eventos — usa a foto de Espaços Coletivos como placeholder até a cliente enviar projeto e foto próprios.
+5ª categoria adicionada ao bento da home, grid reorganizado em 3+2. A capa já usa foto própria de eventos (enviada em 17/09), mas ainda não existe projeto de eventos cadastrado: o filtro "Eventos" em /projetos/ mostra o estado vazio.
 
 ---
 
