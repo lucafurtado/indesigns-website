@@ -415,10 +415,12 @@ button {
   background: rgba(23, 58, 74, 0.5);
   z-index: 899;
   opacity: 0;
+  pointer-events: none;
   transition: opacity var(--t-med) var(--ease);
 }
 .nav__backdrop.visible {
   opacity: 1;
+  pointer-events: auto;
 }
 
 /* ============================================================
