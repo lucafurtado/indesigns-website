@@ -97,7 +97,7 @@ Depoimentos passaram a ser data-driven: uma entrada em `06_website/build/assets/
 *Razão: pedido da cliente pra publicar feedbacks sem retrabalho manual em cada projeto. Skill `.claude/skills/adicionar-depoimento/` cobre o fluxo.*
 
 **Set/2026 | Narrativa dos cases: como era → transformação → resultado → cliente**
-Nos cases novos (Projeto Verter, Apto CI) o carrossel "Como era antes" vem antes da galeria de renders, seguido do depoimento. Vídeos do projeto entram como grupo de bolinhas (`.project-reels`) reutilizando o componente de vídeo existente. Nomes de exibição mudam sem mudar a URL (Consultório ML → Projeto Verter, Cobertura Duplex Noroeste → Cobertura Monis).
+Nos cases novos (Projeto Verter, Apto CI) o carrossel "Como era antes" vem antes da galeria de renders, seguido do depoimento. Vídeos do projeto entram como grupo de bolinhas (`.project-reels`) reutilizando o componente de vídeo existente. Nomes de exibição mudam sem mudar a URL (Consultório ML → Projeto Verter, Cobertura Duplex Noroeste → Cobertura MONIS, Apto CI → PROJETO CECITA).
 
 **Set/2026 | Miniaturas otimizadas em /projetos/**
 Cards e carrossel de /projetos/ usam derivados WebP (`assets/projects/_thumbs/`), não os originais de até 12 MB. Ao incluir projeto novo, gerar as miniaturas antes.
