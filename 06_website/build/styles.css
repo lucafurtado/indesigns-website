@@ -1051,6 +1051,11 @@ button {
 
 .depoimento__toggle:hover { opacity: 0.6; }
 
+.depoimento__text--full p + p { margin-top: 1em; }
+
+/* Card aberto não estica o vizinho até a mesma altura */
+.depoimentos__grid:has(.depoimento.is-open) { align-items: start; }
+
 .depoimentos__note {
   font-family: var(--font-body);
   font-size: 15px;
@@ -4301,6 +4306,38 @@ iframe {
   letter-spacing: -0.01em;
   opacity: 0.80;
 }
+
+.project-testimonial__toggle {
+  margin-top: 28px;
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(60,110,113,0.3);
+  padding: 0 0 2px;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+
+.project-testimonial__toggle:hover { opacity: 0.6; }
+
+.project-testimonial__full {
+  max-width: 620px;
+  margin: 36px auto 0;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--petroleo);
+  opacity: 0.78;
+}
+
+.project-testimonial__full p { max-width: none; }
+.project-testimonial__full p + p { margin-top: 1.1em; }
 
 .project-testimonial__author {
   margin-top: 36px;

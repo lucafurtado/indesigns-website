@@ -3,7 +3,7 @@
     {
       "id": "residencia-noroeste-01",
       "projectSlug": "residencia-noroeste",
-      "projectName": "Cobertura Duplex Noroeste",
+      "projectName": "Cobertura Monis",
       "clientName": "Cliente",
       "clientRole": "",
       "highlight": "A mudança para um espaço menor virou mais convivência, não menos.",
@@ -18,6 +18,16 @@
       "clientRole": "",
       "highlight": "A sala precisava transmitir calma antes mesmo da conversa começar.",
       "text": "A sala de atendimento precisava transmitir calma antes mesmo da conversa começar. Ficou exatamente assim.",
+      "featured": true
+    },
+    {
+      "id": "chacara-recanto-do-jaburu-01",
+      "projectSlug": "chacara-recanto-do-jaburu",
+      "projectName": "Chácara Recanto do Jaburu",
+      "clientName": "Carlos Henrique",
+      "clientRole": "",
+      "highlight": "Cada escolha feita ali carrega o carinho e a competência de uma profissional excepcional.",
+      "text": "Gostaria de registrar aqui meu agradecimento à arquiteta Indira, da Indesigns, pelo trabalho incrível no projeto Recanto do Jaburu.\nDesde o início, o desafio foi grande: encontrar equilíbrio entre elementos rústicos e modernos, respeitar o que já existia no terreno e, ao mesmo tempo, atender plenamente às nossas necessidades atuais. Indira não apenas abraçou esse desafio com maestria, como trouxe soluções criativas, funcionais e esteticamente harmoniosas, transformando o espaço em um lar com identidade, aconchego e fluidez.\nSua dedicação em adaptar o antigo ao novo foi admirável. Tudo ficou integrado de forma natural, refletindo sensibilidade, cuidado e um olhar técnico apurado. Além disso, sua organização, talento e atenção aos detalhes fizeram toda a diferença durante o processo.\nHoje, com a casa praticamente pronta e já sendo vivida, posso dizer com certeza que cada escolha feita ali carrega o carinho e a competência de uma profissional excepcional.\nMuito Obrigado!",
       "featured": true
     }
   ]
