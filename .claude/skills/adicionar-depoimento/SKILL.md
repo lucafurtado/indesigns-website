@@ -36,7 +36,9 @@ description: >
 ```
 
 - `projectSlug` precisa bater exatamente com o nome da pasta em `06_website/build/<slug>/`. Pastas atuais: `apto-ci`, `brinquedoteca`, `chacara-recanto-do-jaburu`, `clinica-orbis`, `cobertura-porto-seguro`, `consultorio-ml`, `escritorio-ip`, `escritorio-mr`, `mj-vx-maju-vitor`, `penteadeira`, `quartinho-mc`, `residencia-noroeste`.
-- `highlight` **nunca é gerado automaticamente por corte de texto** — é curadoria manual (decisão do projeto). Ver Passo 2.
+- `text`: separar parágrafos com `\n` no JSON (o `depoimentos.js` gera um `<p>` por linha). Manter o texto do cliente como veio.
+- Nas páginas de projeto e nos cards aparece o `highlight`; o `text` completo só abre em "Clique para ver feedback completo".
+- `highlight` **nunca é gerado automaticamente por corte de texto** — é curadoria manual (decisão do projeto). Como aparece entre aspas atribuído ao cliente, preferir um trecho **literal** do texto dele. Ver Passo 2.
 - `featured` controla os até 3 cards que aparecem na home. A página `/feedbacks/` sempre mostra todos, independente de `featured`.
 
 ## Workflow
