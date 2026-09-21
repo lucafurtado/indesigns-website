@@ -88,22 +88,30 @@
   </style>
 </head>
 <body class="servicos-page">
-  <nav class="nav project-nav" id="nav" role="navigation" aria-label="Navegação principal">
+  <nav class="nav" id="nav" role="navigation" aria-label="Navegação principal">
     <div class="nav__container">
-      <a href="/" class="nav__logo" aria-label="Indesigns início">
-        <img src="/assets/logo-full.png" alt="Indesigns" class="nav__logo-img" width="auto" height="30">
-      </a>
-      <div class="nav__links" id="navLinks" role="menubar">
+
+      <nav class="nav__links nav__links--left" id="navLinks" role="menubar">
         <a href="/#projetos" class="nav__link" role="menuitem">Projetos</a>
         <a href="/feedbacks/" class="nav__link" role="menuitem">Feedbacks</a>
         <a href="/#servicos" class="nav__link" role="menuitem">Serviços</a>
         <a href="/#processo" class="nav__link" role="menuitem">Processo</a>
+      </nav>
+
+      <a href="/" class="nav__logo" id="navLogo" aria-label="Indesigns, início">
+        <img src="/assets/logo-nav.png" alt="Indesigns" class="nav__logo-img" width="auto" height="36">
+      </a>
+
+      <nav class="nav__links nav__links--right" role="menubar">
         <a href="/#sobre" class="nav__link" role="menuitem">Sobre</a>
         <a href="/collab/" class="nav__link" role="menuitem">Collab</a>
-        <a href="/links/" class="nav__link" role="menuitem">Links</a>
         <a href="/#contato" class="nav__link nav__link--cta" role="menuitem">Contato</a>
-      </div>
-      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
     </div>
     <div class="nav__backdrop" id="navBackdrop"></div>
   </nav>
